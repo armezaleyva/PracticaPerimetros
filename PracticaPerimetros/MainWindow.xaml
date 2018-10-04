@@ -1,0 +1,31 @@
+﻿<Window x:Class="PracticaPerimetros.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaPerimetros"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Margin="8,8,8,0">Perímetros</TextBlock>
+        <ComboBox Name="cbTipoFigura" SelectionChanged="cbTipoFigura_SelectionChanged" Margin="8,8,8,0">
+            <ComboBoxItem>Círculo</ComboBoxItem>
+            <ComboBoxItem>Cuadrado</ComboBoxItem>
+            <ComboBoxItem>Trapecio</ComboBoxItem>
+            <ComboBoxItem>Rectángulo</ComboBoxItem>
+        </ComboBox>
+        <local:ControlPerimetroCirculo x:Name="controlPerimetroCirculo" Visibility="Collapsed">
+        </local:ControlPerimetroCirculo>
+        <local:ControlPerimetroCuadrado x:Name="controlPerimetroCuadrado" Visibility="Collapsed">
+        </local:ControlPerimetroCuadrado>
+        <local:ControlPerimetroTrapecio x:Name="controlPerimetroTrapecio" Visibility="Collapsed">
+        </local:ControlPerimetroTrapecio>
+        <local:ControlPerimetroRectangulo x:Name="controlPerimetroRectangulo" Visibility="Collapsed">
+        </local:ControlPerimetroRectangulo>
+        <Button Name="btnCalcular" Click="btnCalcular_Click" Margin="8,16,8,0">Calcular</Button>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="8,8,8,0">Resultado:</TextBlock>
+            <TextBlock Name="lblResultado" Margin="8,8,8,0">0.0</TextBlock>
+        </StackPanel>
+    </StackPanel>
+</Window>
